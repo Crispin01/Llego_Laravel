@@ -34,11 +34,11 @@ class UsuariosController extends Controller
 
   function login(Request $request) {
     $datos = $request->all();
-    $usuarios = Usuario::where('correo', $datos['correo'])->where('contraseña',$datos['contraseña'])->first()
+    $usuarios = Usuario::where('correo', $datos['correo'])->where('contraseña',sha1($datos['contraseña']))->first();
     if ($usuarios) {
         return json_encode($usuarios);
     } else {
-        return "Usuario no existe";
+        return 0;
     }
   }
 }
