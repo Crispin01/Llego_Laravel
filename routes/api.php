@@ -20,7 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::get( '/evento/listar',[EventosController::class,'listado' ]);
+
+Route::get( '/evento/detalle/{id}',[EventosController::class,'detalle' ]);
+
 Route::post( '/evento/registrar',[EventosController::class,'registrar' ]);
 Route::put( '/evento/actualizar/{id}',[EventosController::class,'actualizar' ]);
 Route::get( '/evento/eliminar/{id}',[EventosController::class,'eliminar' ]);

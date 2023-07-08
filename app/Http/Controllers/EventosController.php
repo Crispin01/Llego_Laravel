@@ -11,6 +11,10 @@ class EventosController extends Controller
         $eventos = Evento::get();
         return json_encode($eventos);
     }
+    function detalle($id){
+        $evento = Evento::find($id);
+        return json_encode($evento);
+    }
     
     function registrar(Request $request){
         $datos = $request->all();
