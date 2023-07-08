@@ -16,7 +16,7 @@ class UsuariosController extends Controller
         $datos = $request->all();
         $datos[ 'contraseña' ]= sha1($datos[ 'contraseña' ]);
         Usuario::create($datos);
-        echo "Se insertó correctamente";
+        echo "1";
     }
 
     function actualizar($id, Request $request){
