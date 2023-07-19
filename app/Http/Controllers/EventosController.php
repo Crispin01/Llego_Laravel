@@ -19,7 +19,7 @@ class EventosController extends Controller
     function registrar(Request $request){
         $datos = $request->all();
         Evento::create($datos);
-        echo "Se insertó correctamente";
+        echo 1;
     }
 
     function actualizar($id, Request $request){
